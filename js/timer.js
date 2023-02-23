@@ -4,8 +4,15 @@ const minutesElem = document.querySelector('.time__minutes')
 const secondsElem = document.querySelector('.time__seconds')
 
 const showTime = (seconds) => {
-    minutesElem.textContent = Math.floor(seconds / 60);
-    secondsElem.textContent = seconds % 60;
+    minutesElem.textContent = addZero(Math.floor(seconds / 60))
+    secondsElem.textContent = addZero((seconds % 60))
+}
+
+const addZero = (num) => {
+    if (num < 10) {
+        return '0' + 1
+    }
+    return num
 }
 
 export const startTimer = () => {
